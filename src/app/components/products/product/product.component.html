@@ -1,0 +1,62 @@
+<div class="card mt-5" >
+    <div class="card-body">
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+           <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+            <div class="form-group">
+                <input 
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  #name="ngModel"
+                  [(ngModel)]="productService.selectedProduct.name"
+                  placeholder="Ingresa un Producto"
+                  >
+            </div>  
+
+          <div class="form-group">
+              <input 
+                type="text"
+                class="form-control"
+                name="category"
+                #category="ngModel"
+                [(ngModel)]="productService.selectedProduct.category"
+                placeholder="ingresa una categoria"
+                >
+          </div>  
+
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="location"
+              #location="ngModel"
+              [(ngModel)]="productService.selectedProduct.location"
+              placeholder="Ingresa de donde viene"
+              >
+        </div>  
+
+        <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="price"
+              #price="ngModel"
+              [(ngModel)]="productService.selectedProduct.price"
+              placeholder="ingresa su precio"
+              >
+        </div>  
+        
+        <div class="form-group">
+          <button class ="btn btn-primary" type="submit">  
+            <i class ="fas fa-plus-circle"></i> Añade un producto
+          </button>
+          <button class ="btn btn-secondary" type= "reset" (click)="resetForm(productForm)">
+            <i class ="fas fa-sync-alt"></i> Limpiar
+           </button>
+        </div>
+
+
+        </form>
+    </div>
+
+</div>
